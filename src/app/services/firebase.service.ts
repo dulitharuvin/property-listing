@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 import { Listing } from './../interfaces/listing'
@@ -14,13 +14,7 @@ export class FirebaseService {
 
   getListings() {
     this.listings = this.fireDb.list('/listings').valueChanges() as Observable<Listing[]>;
-    console.log(this.listings);
     return this.listings;
   }
-
-  saveListing(){
-    
-  }
-
 }
 
