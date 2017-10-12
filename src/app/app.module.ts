@@ -14,7 +14,8 @@ import { EditListingComponent } from './components/edit-listing/edit-listing.com
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'listings', component: ListingsComponent}
+  {path: 'listings', component: ListingsComponent},
+  {path: 'add-listing', component: AddListingComponent}
 ]
 
 @NgModule({
