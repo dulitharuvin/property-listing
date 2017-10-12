@@ -17,6 +17,7 @@ import { AddListingComponent } from './components/add-listing/add-listing.compon
 import { EditListingComponent } from './components/edit-listing/edit-listing.component';
 
 import { FirebaseService } from './services/firebase.service';
+import { UserService } from './services/user.service';
 
 import { environment } from '../environments/environment';
 
@@ -45,7 +46,10 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [FirebaseService],
+  providers: [
+    FirebaseService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

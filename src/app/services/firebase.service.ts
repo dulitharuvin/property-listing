@@ -14,7 +14,12 @@ export class FirebaseService {
 
   getListings() {
     this.listings = this.fireDb.list('/listings').valueChanges() as Observable<Listing[]>;
+    console.log(this.listings);
     return this.listings;
+  }
+
+  saveListing(){
+    
   }
 
 }
