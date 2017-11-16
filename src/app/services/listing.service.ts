@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Listing } from './../interfaces/listing'
 
 @Injectable()
-export class FirebaseService {
+export class ListingService {
 
   listings: Observable<Listing[]>;
 

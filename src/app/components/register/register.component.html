@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col col-xl-12 col-lg-12">
+    <!-- <div class="card mb-3"> -->
+    <div class="card-block">
+      <form role="form" #userSaveForm="ngForm" novalidate (ngSubmit)="registerUser()" novalidate>
+
+        <div class="form-group">
+          <label class="form-control-label" for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="user.firstName" required #firstName="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="user.lastName" required #lastName="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="nic">NIC</label>
+          <input type="text" class="form-control" nicvalidator id="nic" name="nic" [(ngModel)]="user.nic" required #nic="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required #email="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required
+            #password="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="telephone">Telephone</label>
+          <input type="text" class="form-control" id="telephone" name="telephone" [(ngModel)]="user.telephone" required
+            #telephone="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="address">Adress</label>
+          <textarea class="form-control" id="address" name="address" [(ngModel)]="user.address" required #address="ngModel"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Select Roles</label>
+          <br/>
+          <label>
+            <input type="checkbox" name="lecturer" [(ngModel)]="user.roles.user" [checked]="user.roles.user"> User
+          </label>
+          <label>
+            <input type="checkbox" name="admin" [(ngModel)]="user.roles.admin"> Admin
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="userSaveForm.invalid">Submit</button>
+        <button type="reset" class="btn btn-secondary">Cancel</button>
+      </form>
+    </div>
+    <!-- </div> -->
+  </div>
+</div>

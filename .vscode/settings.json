@@ -1,0 +1,6 @@
+{
+    // The following will hide the spec.ts files in the editor
+    "files.exclude": {
+        "**/*spec.ts": true
+    }
+}

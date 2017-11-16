@@ -16,15 +16,17 @@ import { ListingComponent } from './components/listing/listing.component';
 import { AddListingComponent } from './components/add-listing/add-listing.component';
 import { EditListingComponent } from './components/edit-listing/edit-listing.component';
 
-import { FirebaseService } from './services/firebase.service';
+import { ListingService } from './services/listing.service';
 import { UserService } from './services/user.service';
 
 import { environment } from '../environments/environment';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'listings', component: ListingsComponent },
-  { path: 'add-listing', component: AddListingComponent }
+  { path: 'add-listing', component: AddListingComponent },
+  { path: 'register', component: RegisterComponent }
 ]
 
 @NgModule({
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     ListingComponent,
     AddListingComponent,
-    EditListingComponent
+    EditListingComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule
   ],
   providers: [
-    FirebaseService,
+    ListingService,
     UserService
   ],
   bootstrap: [AppComponent]

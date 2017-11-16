@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { FirebaseService } from './../../services/firebase.service'
+import { ListingService } from './../../services/listing.service'
 import { Listing } from './../../interfaces/listing';
 
 @Component({
@@ -13,7 +13,7 @@ export class ListingsComponent implements OnInit {
 
   listings: Listing[];
 
-  constructor(private firebaseService: FirebaseService) {
+  constructor(private firebaseService: ListingService) {
 
   }
 
