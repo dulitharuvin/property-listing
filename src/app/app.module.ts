@@ -18,15 +18,20 @@ import { EditListingComponent } from './components/edit-listing/edit-listing.com
 
 import { ListingService } from './services/listing.service';
 import { UserService } from './services/user.service';
+import { AuthService } from './services/auth.service';
 
 import { environment } from '../environments/environment';
 import { RegisterComponent } from './components/register/register.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'listings', component: ListingsComponent },
   { path: 'add-listing', component: AddListingComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'user-list', component: UserListComponent }
 ]
 
 @NgModule({
@@ -38,7 +43,9 @@ const appRoutes: Routes = [
     ListingComponent,
     AddListingComponent,
     EditListingComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     ListingService,
-    UserService
+    UserService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

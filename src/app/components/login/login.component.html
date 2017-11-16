@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-12 push-md-4">
+        <img src="assets/img/logo.png" width="150px" class="user-avatar" />
+        <h1>Login To Property Listing</h1>
+        <form role="form" #loginForm="ngForm" novalidate (ngSubmit)="loginUser()">
+            <div class="form-content">
+                <p id="lblError" [hidden]="!showError">{{error}}</p>                        
+                <div class="form-group">
+                    <input type="text" class="form-control input-underline input-lg" id="email" name="email" placeholder="Email" [(ngModel)]="email">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control input-underline input-lg" id="password" name="password" placeholder="Password" [(ngModel)]="password">
+                </div>
+            </div>
+            <button type="submit" class="btn rounded-btn">Submit</button>
+            &nbsp;
+            <button type="reset" class="btn rounded-btn">Cancel</button>                
+        </form>
+    </div>
+</div>
