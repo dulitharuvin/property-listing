@@ -25,9 +25,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { AuthGuard } from './shared';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'listings', component: ListingsComponent },
+  { path: 'listings', component: ListingsComponent, canActivate: [AuthGuard] },
   { path: 'add-listing', component: AddListingComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -59,7 +61,8 @@ const appRoutes: Routes = [
   providers: [
     ListingService,
     UserService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
